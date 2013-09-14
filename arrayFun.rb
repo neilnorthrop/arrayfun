@@ -1,46 +1,45 @@
-# Create a Class that will instantiate with 2 numbers
 class ArrayFun
-  attr_accessor :num1, :num2, :array, :shuffled_array, :counter
-  # Initialize with 2 numbers
+  attr_accessor :num1, :num2, :array, :shuffled_array, :counter, :reverse
+
   def initialize(num1, num2)
     if num1 > num2
       @num1 = num2
       @num2 = num1
+      @reverse = true
     else
       @num1 = num1
       @num2 = num2
     end
     @counter = 0
   end
-  # Build an Array out of two numbers
-  def BuildArray
-    @array = (@num1..@num2).to_a
-  end
-  # Shuffle the Array
-  def ShuffleArray
-    @shuffled_array = @array.shuffle
-  end
-  # Check to see if the original Array and the shuffled Array are equal to each other
-  def CompareArray
-    array == shuffled_array
-  end
 
-  def CheckStatement
-    if CompareArray()
-      # If so, exit and print out counter
-      PrintCounter().to_s
+  def build_array
+    if reverse == true
+      @array = (@num1..@num2).to_a.reverse
     else
-      # If not, shuffle again and add 1 to a Counter
-      ShuffleArray()
-      @counter += 1
-      # Repeat until original Array and shuffled Array are equal
-      # Check again to see if the original Array and the shuffled Array are equal to each other
-      CheckStatement()
+      @array = (@num1..@num2).to_a
     end
   end
 
-  # Print out Counter
-  def PrintCounter
+  def shuffle_array
+    @shuffled_array = @array.shuffle
+  end
+
+  def compare_array
+    array == shuffled_array
+  end
+
+  def check_statement
+    if compare_array()
+      print_counter().to_s
+    else
+      shuffle_array()
+      @counter += 1
+      check_statement()
+    end
+  end
+
+  def print_counter
     puts @counter
   end
 
