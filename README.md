@@ -1,4 +1,5 @@
 # RubyFun!
+[![Code Climate](https://codeclimate.com/github/neilnorthrop/arrayfun.png)](https://codeclimate.com/github/neilnorthrop/arrayfun)
 
 > Just a little fun I was having with arrays. The point of this was to
 > take an array of numbers and see how many times it would take shuffle
