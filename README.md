@@ -13,17 +13,23 @@
 * Build an array of your 2 numbers.
 
   ```Ruby
-  array.BuildArray
+  array.build_array
   ```
 
 * Shuffle the newly built array.
 
   ```Ruby
-  array.ShuffleArray
+  array.shuffle_array
   ```
 
 * Check the two arrays to and compare if they are the same order.
 
   ```Ruby
-  array.CheckStatement
+  array.compare_array
+  ```
+
+* Let the script automatically check and shuffle. Prints out a counter.
+
+  ```Ruby
+  array.check_statement
   ```
