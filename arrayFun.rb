@@ -23,7 +23,7 @@ class ArrayFun
   def CheckStatement
     if CompareArray()
       # If so, exit and print out counter
-      # PrintCounter().to_s
+      PrintCounter().to_s
     else
       # If not, shuffle again and add 1 to a Counter
       ShuffleArray()
