@@ -7,7 +7,7 @@
 * Start off with instantiating ArrayFun with 2 numbers.
 
   ```Ruby
-  array = ArrayFun.new
+  array = ArrayFun.new(number1, number2)
   ```
 
 * Build an array of your 2 numbers.
