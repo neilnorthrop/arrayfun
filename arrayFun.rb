@@ -17,7 +17,7 @@ class ArrayFun
   end
   # Check to see if the original Array and the shuffled Array are equal to each other
   def CompareArray
-    (array == shuffled_array)
+    array == shuffled_array
   end
 
   def CheckStatement
@@ -27,7 +27,7 @@ class ArrayFun
     else
       # If not, shuffle again and add 1 to a Counter
       ShuffleArray()
-      @counter = @counter + 1
+      @counter += 1
       # Repeat until original Array and shuffled Array are equal
       # Check again to see if the original Array and the shuffled Array are equal to each other
       CheckStatement()
