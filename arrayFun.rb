@@ -3,8 +3,13 @@ class ArrayFun
   attr_accessor :num1, :num2, :array, :shuffled_array, :counter
   # Initialize with 2 numbers
   def initialize(num1, num2)
-    @num1 = num1
-    @num2 = num2
+    if num1 > num2
+      @num1 = num2
+      @num2 = num1
+    else
+      @num1 = num1
+      @num2 = num2
+    end
     @counter = 0
   end
   # Build an Array out of two numbers

@@ -6,12 +6,18 @@ class ArrayFunTest < MiniTest::Test
   def setup
     @new_array_fun1 = ArrayFun.new(1, 2)
     @new_array_fun2 = ArrayFun.new(1, 5)
+    @new_array_fun3 = ArrayFun.new(4, 1)
     @array1 = [1, 2]
     @array2 = [1, 2, 3, 4, 5]
+    @array3 = [1, 2, 3, 4]
   end
 
   def test_to_create_ArrayFun_class_initializing_with_two_numbers
     assert(@new_array_fun1)
+  end
+
+  def test_that_ArrayFun_class_is_building_the_arrays_correctly
+    assert_equal(@array3, @new_array_fun3.BuildArray)
   end
 
   def test_to_create_a_small_array_with_BuildArray
