@@ -7,6 +7,7 @@ class ArrayFunTest < MiniTest::Test
     @new_array_fun1 = ArrayFun.new(1, 2)
     @new_array_fun2 = ArrayFun.new(1, 5)
     @new_array_fun3 = ArrayFun.new(4, 1)
+    @new_array_fun4 = ArrayFun.new(0, 10)
     @array1 = [1, 2]
     @array2 = [1, 2, 3, 4, 5]
     @array3 = [4, 3, 2, 1]
@@ -54,6 +55,13 @@ class ArrayFunTest < MiniTest::Test
     @new_array_fun2.build_array
     @new_array_fun2.shuffle_array
     assert(@new_array_fun2.check_statement.class)
+  end
+
+  def test_that_stack_level_error_does_not_show_up
+    # Need to research which assert to use, if any
+    @new_array_fun4.build_array
+    @new_array_fun4.shuffle_array
+    @new_array_fun4.check_statement
   end
 
 end

@@ -1,5 +1,5 @@
 class ArrayFun
-  attr_accessor :num1, :num2, :array, :shuffled_array, :counter, :reverse
+  attr_accessor :num1, :num2, :array, :shuffled_array, :counter, :reverse, :error
 
   def initialize(num1, num2)
     if num1 > num2
@@ -11,6 +11,7 @@ class ArrayFun
       @num2 = num2
     end
     @counter = 0
+    @error = []
   end
 
   def build_array
@@ -26,16 +27,20 @@ class ArrayFun
   end
 
   def compare_array
-    array == shuffled_array
+    @array == shuffled_array
   end
 
   def check_statement
-    if compare_array()
-      print_counter().to_s
-    else
-      shuffle_array()
-      @counter += 1
-      check_statement()
+    begin
+      if compare_array()
+        print_counter().to_s
+      else
+        shuffle_array()
+        @counter += 1
+        check_statement()
+      end
+    rescue SystemStackError => e
+      @error << e.message
     end
   end
 
