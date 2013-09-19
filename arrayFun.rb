@@ -27,10 +27,11 @@ class ArrayFun
   end
 
   def compare_array
-    @array == shuffled_array
+    @array == @shuffled_array
   end
 
   def check_statement
+    GC.start
     begin
       if compare_array()
         print_counter().to_s
