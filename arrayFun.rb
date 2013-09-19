@@ -41,6 +41,7 @@ class ArrayFun
       end
     rescue SystemStackError => e
       @error << e.message
+      retry
     end
   end
 
