@@ -16,9 +16,9 @@ class ArrayFun
 
   def build_array
     if reverse == true
-      @array = (@num1..@num2).to_a.reverse
+      @array = (num1..num2).to_a.reverse
     else
-      @array = (@num1..@num2).to_a
+      @array = (num1..num2).to_a
     end
   end
 
@@ -37,7 +37,7 @@ class ArrayFun
         print_counter().to_s
       else
         shuffle_array()
-        @counter += 1
+        counter += 1
         check_statement()
       end
     rescue SystemStackError => e
@@ -47,7 +47,7 @@ class ArrayFun
   end
 
   def print_counter
-    puts @counter
+    puts counter
   end
 
 end
